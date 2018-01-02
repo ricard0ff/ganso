@@ -1,0 +1,40 @@
+author: ricard0ff
+description: iotcore example
+version: 1.0
+
+libs_version: ${mos.version}
+modules_version: ${mos.version}
+mongoose_os_version: ${mos.version}
+
+filesystem:
+  - fs
+libs:
+    # common mgos libs
+  - origin: https://github.com/mongoose-os-libs/ca-bundle
+  - origin: https://github.com/mongoose-os-libs/i2c
+  - origin: https://github.com/mongoose-os-libs/rpc-service-config
+  - origin: https://github.com/mongoose-os-libs/rpc-service-fs
+  - origin: https://github.com/mongoose-os-libs/rpc-uart
+  - origin: https://github.com/mongoose-os-libs/mqtt
+  - origin: https://github.com/mongoose-os-libs/gcp
+  - origin: https://github.com/mongoose-os-libs/arduino-adafruit-bme280
+  - origin: https://github.com/mongoose-os-libs/mjs
+  - origin: https://github.com/mongoose-os-libs/js-demo-bundle
+config_schema:
+  - ["pins", "o", {title: "Pins layout"}]
+  - ["pins.led", "i", -1, {title: "LED GPIO pin"}]
+  - ["pins.button", "i", -1, {title: "Button GPIO pin"}]
+  - ["i2c.enable", true]
+  - ["i2c.sda_gpio", 12]
+  - ["i2c.scl_gpio", 14]
+  - ["mqtt.server", "iot.eclipse.org:1883"]
+  - ["pins.led", 2]
+  - ["pins.button", 0]
+
+
+tags:
+  - js
+  - arduino
+  - hw
+
+manifest_version: 2018-01-01
